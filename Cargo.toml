@@ -1,0 +1,13 @@
+[package]
+name = "dotprod"
+version = "0.1.0"
+authors = ["Valdemar Erk <v@erk.io>"]
+
+[dependencies]
+libc = "0.2.0"
+lazy_static = "1.1.0"
+parking_lot = "0.6.4"
+
+[build-dependencies]
+cc = "1.0"
+bindgen = "0.42.3"
