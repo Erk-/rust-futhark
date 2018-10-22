@@ -7,6 +7,7 @@ authors = ["Valdemar Erk <v@erk.io>"]
 libc = "0.2.0"
 lazy_static = "1.1.0"
 parking_lot = "0.6.4"
+jemallocator = "0.1.9"
 
 [build-dependencies]
 cc = "1.0"

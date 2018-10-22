@@ -5,11 +5,11 @@ use std::path::PathBuf;
 use std::process::Command;
 
 fn main() {
-    let _ = Command::new("futhark-c")
-            .arg("--library")
-            .arg("./dotprod.fut")
-            .output()
-            .expect("failed to execute process");
+    Command::new("futhark-opencl")
+        .arg("--library")
+        .arg("./dotprod.fut")
+        .output()
+        .expect("failed to execute process");
     
     let bindings = bindgen::Builder::default()
         .header("dotprod.h")
@@ -26,4 +26,5 @@ fn main() {
         .flag("-w")
         .shared_flag(true)
         .compile("libdotprod.so");
+    println!("cargo:rustc-link-lib=OpenCL");
 }
